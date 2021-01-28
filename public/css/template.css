@@ -1,0 +1,80 @@
+* {
+    margin: 0%;
+}
+
+body {
+    /* font-size: 2rem; */
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #d0e0e3ff;
+    display: grid;
+    grid-template: "header header header header header" auto "slide  slide  slide  slide  slide " auto "...... ...... ...... ...... ......" 20px "...... title  title  title  ......" auto "...... ...... ...... ...... ......" 20px "...... left   center right  ......" auto "...... ...... ...... ...... ......" 20px "footer footer footer footer footer" auto / 40px 1fr 2fr 1fr 40px;
+}
+
+
+header {
+    grid-area: header;
+    /* background-color: red ; */
+    height: 70px;
+}
+
+header div.pull-right a {
+    font-size: 25px;
+    margin: 0;
+}
+
+header img {
+    height: 35px;
+}
+
+main {
+    grid-area: center;
+    /* background-color: blue; */
+    min-width: 500px;
+    min-height: 600px;
+}
+
+div.slide {
+    grid-area: slide;
+    /* background-color: pink; */
+}
+
+div.kyatti {
+    grid-area: title;
+    /* background-color: #f814e5 ; */
+}
+
+nav {
+    grid-area: left;
+    /* background-color: yellow; */
+    max-width: 400px;
+    min-width: 300px;
+}
+
+aside {
+    grid-area: right;
+    /* background-color: green; */
+    max-width: 400px;
+    min-width: 300px;
+}
+
+footer {
+    grid-area: footer;
+    max-height: 500px;
+    font-size: large;
+}
+
+footer hr {
+    background-color: white;
+}
+
+@media screen and (max-width: 780px) {
+    body {
+        font-size: 20px;
+        grid-template: "header header header" 56px "slide  slide  slide " auto "...... ...... ......" 10px "...... title  ......" 100px "...... ...... ......" 20px "...... center ......" auto "...... left   ......" "...... right  ......" auto "...... ...... ......" 20px "footer footer footer" 250px /20px 1fr 20px;
+    }
+    aside {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

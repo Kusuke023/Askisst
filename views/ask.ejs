@@ -1,0 +1,267 @@
+<%- include('./_header') %>
+    <!-- コンテンツ -->
+    <main class="">
+        <!--ページタイトル-->
+        <div class="kyatti text-center">
+            <br>
+            <h1>仕事依頼画面</h1>
+        </div>
+
+        <div class="mb-3 p-3 bg-light shadow-sm rounded">
+
+            <!--エリア選択ボタン-->
+            <div class="btn-group">
+                <div class="text-center" style="margin-right: 100px;">
+                    <select name="prefecture" id="pref" class="m-5 p-2 btn btn-info">
+                        <option value="" selected>エリアを選択</option>
+                        <optgroup label="北海道地方" class="bg-info">
+                            <option value="北海道" class="text-white">北海道</option>
+                        </optgroup>
+                        <optgroup label="東北地方" class="bg-info">
+                            <option value="青森県" class="text-white">青森県</option>
+                            <option value="岩手県" class="text-white">岩手県</option>
+                            <option value="宮城県" class="text-white">宮城県</option>
+                            <option value="秋田県" class="text-white">秋田県</option>
+                            <option value="山形県" class="text-white">山形県</option>
+                            <option value="福島県" class="text-white">福島県</option>
+                        </optgroup>
+                        <optgroup label="関東地方" class="bg-info">
+                            <option value="茨城県" class="text-white">茨城県</option>
+                            <option value="栃木県" class="text-white">栃木県</option>
+                            <option value="群馬県" class="text-white">群馬県</option>
+                            <option value="埼玉県" class="text-white">埼玉県</option>
+                            <option value="千葉県" class="text-white">千葉県</option>
+                            <option value="東京都" class="text-white">東京都</option>
+                            <option value="神奈川県" class="text-white">神奈川県</option>
+                        </optgroup>
+                        <optgroup label="中部地方" class="bg-info">
+                            <option value="新潟県" class="text-white">新潟県</option>
+                            <option value="富山県" class="text-white">富山県</option>
+                            <option value="石川県" class="text-white">石川県</option>
+                            <option value="福井県" class="text-white">福井県</option>
+                            <option value="山梨県" class="text-white">山梨県</option>
+                            <option value="長野県" class="text-white">長野県</option>
+                            <option value="岐阜県" class="text-white">岐阜県</option>
+                            <option value="静岡県" class="text-white">静岡県</option>
+                            <option value="愛知県" class="text-white">愛知県</option>
+                        </optgroup>
+                        <optgroup label="近畿地方" class="bg-info">
+                            <option value="三重県" class="text-white">三重県</option>
+                            <option value="滋賀県" class="text-white">滋賀県</option>
+                            <option value="京都府" class="text-white">京都府</option>
+                            <option value="大阪府" class="text-white">大阪府</option>
+                            <option value="兵庫県" class="text-white">兵庫県</option>
+                            <option value="奈良県" class="text-white">奈良県</option>
+                            <option value="和歌山県" class="text-white">和歌山県</option>
+                        </optgroup>
+                        <optgroup label="中国地方" class="bg-info">
+                            <option value="鳥取県" class="text-white">鳥取県</option>
+                            <option value="島根県" class="text-white">島根県</option>
+                            <option value="岡山県" class="text-white">岡山県</option>
+                            <option value="広島県" class="text-white">広島県</option>
+                            <option value="山口県" class="text-white">山口県</option>
+                        </optgroup>
+                        <optgroup label="四国地方" class="bg-info">
+                            <option value="徳島県" class="text-white">徳島県</option>
+                            <option value="香川県" class="text-white">香川県</option>
+                            <option value="愛媛県" class="text-white">愛媛県</option>
+                            <option value="高知県" class="text-white">高知県</option>
+                        </optgroup>
+                        <optgroup label="九州・沖縄地方" class="bg-info">
+                            <option value="福岡県" class="text-white">福岡県</option>
+                            <option value="佐賀県" class="text-white">佐賀県</option>
+                            <option value="長崎県" class="text-white">長崎県</option>
+                            <option value="熊本県" class="text-white">熊本県</option>
+                            <option value="大分県" class="text-white">大分県</option>
+                            <option value="宮崎県" class="text-white">宮崎県</option>
+                            <option value="鹿児島県" class="text-white">鹿児島県</option>
+                            <option value="沖縄県" class="text-white">沖縄県</option>
+                        </optgroup>
+                    </select>
+                    <select name="job" id="job" class="m-3 p-2 btn btn-info">
+                        <option value="" selected>職種を選択</option>
+                        <optgroup label="接客/サービス" class="bg-info">
+                            <option value="家事代行" class="text-white">家事代行</option>
+                            <option value="清掃" class="text-white">清掃</option>
+                            <option value="ベビーシッター" class="text-white">ベビーシッター</option>
+                            <option value="洗車" class="text-white">洗車</option>
+                            <option value="その他サービス" class="text-white">その他サービス</option>
+                        </optgroup>
+                        <optgroup label="物流/配送" class="bg-info">
+                            <option value="ドライバー助手" class="text-white">ドライバー助手</option>
+                            <option value="配達・配送" class="text-white">配達・配送</option>
+                            <option value="引越し" class="text-white">引越し</option>
+                            <option value="その他物流/配送" class="text-white">その他物流/配送</option>
+                        </optgroup>
+                        <optgroup label="軽作業" class="bg-info">
+                            <option value="倉庫・検品" class="text-white">倉庫・検品</option>
+                            <option value="在庫管理・商品管理" class="text-white">在庫管理・商品管理</option>
+                            <option value="仕分け" class="text-white">仕分け</option>
+                            <option value="品だし・ピッキング" class="text-white">品だし・ピッキング</option>
+                        </optgroup>
+                        <optgroup label="事務" class="bg-info">
+                            <option value="一般事務" class="text-white">一般事務</option>
+                            <option value="経理事務" class="text-white">経理事務</option>
+                            <option value="営業事務" class="text-white">営業事務</option>
+                            <option value="伝票整理・資料作成" class="text-white">伝票整理・資料作成</option>
+                            <option value="電話対応" class="text-white">電話対応</option>
+                            <option value="事務関連派遣職" class="text-white">事務関連派遣職</option>
+                            <option value="その他事務" class="text-white">その他事務</option>
+                        </optgroup>
+                        <optgroup label="IT/コンピュータ" class="bg-info">
+                            <option value="SE（システムエンジニア）" class="text-white">SE（システムエンジニア）</option>
+                            <option value="プログラマー" class="text-white">プログラマー</option>
+                            <option value="データ入力・PC入力" class="text-white">データ入力・PC入力</option>
+                            <option value="ユーザーサポート" class="text-white">ユーザーサポート</option>
+                            <option value="OA・パソコンインストラクター" class="text-white">OA・パソコンインストラクター</option>
+                            <option value="IT系派遣職" class="text-white"> IT系派遣職</option>
+                            <option value="デバッガー" class="text-white">デバッガー</option>
+                            <option value="その他コンピュータ関連職" class="text-white">その他コンピュータ関連職</option>
+                        </optgroup>
+                        <optgroup label="専門職/その他" class="bg-info">
+                            <option value="クリエイター" class="text-white">クリエイター</option>
+                            <option value="WEBデザイナー" class="text-white">WEBデザイナー</option>
+                            <option value="デザイナー・イラストレーター" class="text-white">デザイナー・イラストレーター</option>
+                            <option value="グラフィックデザイナー" class="text-white">グラフィックデザイナー</option>
+                            <option value="編集・記者・ライター" class="text-white">造園・庭師</option>
+                            <option value="アンケート・モニター" class="text-white">アンケート・モニター</option>
+                            <option value="通訳・翻訳" class="text-white">通訳・翻訳</option>
+                            <option value="整備士" class="text-white">整備士</option>
+                            <option value="その他派遣職" class="text-white">その他派遣職</option>
+                            <option value="その他専門職" class="text-white">その他専門職</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <hr>
+            </div>
+            <!-- 仕事 -->
+            <div class="my-3 col-auto flex-grow-1">
+
+                <p>
+                    仕事内容詳細<br>
+                </p>
+                <hr>
+                <form>
+                    <div class="form-group">
+                        <label>内容</label>
+                        <input type="text" class="form-control"  placeholder="パソコン修理">
+                        <br>
+                        <label>報酬金</label>
+                        <input type="text" class="form-control" placeholder="5000円">
+                        <br>
+                        <label>交通費支給</label>
+                        <div class="row">
+                            <div class="col-md">
+                                <form>
+                                    <div class="form-group">
+                                        <br>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">有り</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                value="option2">
+                                            <label class="form-check-label" for="inlineRadio2">無し</label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <label>勤務時間</label>
+                    <input type="text" class="form-control" placeholder="5時間/13:00～18:00">
+            </div>
+
+            <hr>
+            <div class="my-3 col-auto flex-grow-1">
+                <p>画像を添付</p>
+                <form method="post" action="#">
+                    <input type="file" name="example">
+            </div>
+        </div>
+        </form>
+        </div>
+
+        <div class="text-center" style="margin-left: 50px;">
+            <input type="submit" class="m-2 p-2 btn btn-primary" name="submit" value="戻る">
+            <input type="submit" class="m-5 p-2 btn btn-primary" name="submit" value="申請する">
+        </div>
+
+
+    </main>
+    <!-- 広告-->
+    <aside>
+        <div class="m-2 p-2 bg-secondary shadow-sm rounded">
+            <!-- <p>広告</p> -->
+            <a href="#">
+                <img src="https://www.kenzo724.com/wordpress/wp-content/uploads/2016/02/kobedenshilast-1.jpg" alt="広告"
+                    class="p-1" style="width: 100%;">
+            </a>
+            <a href="#">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShQ9tzAlmzoGJKCeV7qNfrOKGyJg_iApQ4cw&usqp=CAU"
+                    alt="広告" class="p-1" style="width: 100%;">
+            </a>
+            <a href="#">
+                <img src="https://www.youtube.com/img/desktop/yt_1200.png" alt="広告" class="p-1" style="width: 100%;">
+            </a>
+            <a href="#">
+                <img src="https://res.fashionsnap.com/image/upload/c_limit,f_auto,q_auto,w_2000/asset/article/images/2019/03/instagram_20190320_001.jpg"
+                    alt="広告" class="p-1" style="width: 100%;">
+            </a>
+            <a href="#">
+                <img src="https://tpc.googlesyndication.com/simgad/13830142044748159329?sqp=4sqPyQQrQikqJwhfEAEdAAC0QiABKAEwCTgDQPCTCUgAUAFYAWBfcAJ4AcUBLbKdPg&rs=AOga4qk9pkuPxF-yHfpvMnTS6dkoWyK7LQ"
+                    alt="広告" class="p-1" style="width: 100%;">
+            </a>
+            <a href="#">
+                <img src="data:image/png;base64,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"
+                    alt="広告" class="p-1" style="width: 100%;">
+            </a>
+        </div>
+    </aside>
+
+    <!--フッター-->
+    <%- include('./_footer') %>
+
+<style>
+    div#contents {
+        width: 100%;
+        background: #FFFFFF;
+        margin: 0px auto;
+    }
+</style>
+<script>
+    $(function() {
+        $('input[type=file]').after('<span></span>');
+        
+        // アップロードするファイルを選択
+        $('input[type=file]').change(function() {
+            $('span').html('');
+            var file = $(this).prop('files');
+            
+            var img_count = 1;
+            $(file).each(function(i) {
+                // 1枚まで
+                if (img_count > 1) {
+                    return false;
+                }
+                
+                if (! file[i].type.match('image.*')) {
+                    $(this).val('');
+                    $('span').html('');
+                    return;
+                }
+                
+                var reader = new FileReader();
+                reader.onload = function() {
+                    var img_src = $('<img style="width: 100%;height: auto;">').attr('src', reader.result);
+                    $('span').append(img_src);
+                }
+                reader.readAsDataURL(file[i]);
+                
+                img_count = img_count + 1;
+            });
+        });
+    });
+</script>

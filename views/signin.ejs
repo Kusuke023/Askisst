@@ -1,0 +1,72 @@
+<%- include('./_header') %>
+    <script>
+        function check() {
+            var p = new RegExp("^[0-9a-zA-Z_\.-]+@[0-9a-zA-Z_\.-]+\.[a-zA-Z]+$", "i"); /* メールアドレス */
+            var s = myform.address.value;
+            var o = s.match(p);
+
+            var h = new RegExp("^[0-9a-zA-Z_\.-]+[0-9a-zA-Z_\.-]+\.[a-zA-Z]+$", "i"); /* パスワード */
+            var i = myform.pass.value;
+            var j = i.match(h);
+
+            if (s == "") {
+                window.alert("メールアドレスを入力してください。");
+                res = false;
+            }
+            else if (o == null) {
+                window.alert("メールアドレスの入力が誤っています。");
+                res = false;
+            }
+
+            else if (i == "") {
+                window.alert("パスワードを入力してください。");
+                res = false;
+            }
+            else if (j == null) {
+                window.alert("パスワードの入力が誤っています。");
+                res = false;
+            }
+
+            else {
+                window.alert("送信します。");
+                res = true;
+            }
+            return res;
+        }
+    </script>
+
+
+
+    <!-- コンテンツ -->
+    <main class="">
+        <div class="text-center" style="margin-right: 16px;">
+            <br>
+            <h1>ログイン</h1>
+            <p>会員情報を入力してください</p>
+            <!--会員情報入力-->
+            <form name="myform" action="/signin" method="POST" onsubmit="return check()">
+                <div class="form-row justify-content-center m-2">
+                    <div class="col-10">
+                        <label class="float-left">メールアドレス</label>
+                        <input type="mail" class="form-control" name="email" placeholder="example@.com">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="form-row justify-content-center m-2">
+                    <div class="col-10">
+                        <label class="float-left">パスワード</label>
+                        <input type="password" class="form-control" name="password" placeholder="パスワードを入力して下さい。">
+                    </div>
+                </div>
+
+                <br>
+                <div class="col text-center m-3">
+                    <button type="submit" class="btn btn-primary">ログイン</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!--フッター-->
+    <%- include('./_footer') %>

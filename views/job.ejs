@@ -1,0 +1,75 @@
+<%- include('./_header') %>
+
+    <div class="kyatti text-center">
+        <br>
+        <h1>仕事依頼表示画面</h1>
+    </div>
+
+    <!-- コンテンツ -->
+    <main class="">
+        <% rquests.forEach((rquest) => { %>
+            <div class="m-3 p-3 bg-light shadow-sm rounded">
+                <p>
+                    仕事内容詳細<br>
+                </p>
+                <hr>
+                <a href="#" class="" style="color: black; text-decoration: none;">
+                <div class="p">
+                    <label>内容</label>
+                    <p><%= rquest.job_des %></p>
+                    <br>
+                    <label>報酬金</label>
+                    <p><%= rquest.reward %></p>
+                    <br>
+                    <label>交通費支給</label>
+                    <p><%= rquest.carfare %></p>                  
+                    <br>
+                    <label>勤務時間</label>
+                    <p><%= rquest.work_time %></p>
+                    <img src="<%= rquest.job_img %>" style="width: 100%;height: auto;">            
+                </div>
+            </a>
+                <hr>
+                <div class="text-center">
+                    <a href="/" id="btn" class="m-2 px-5 btn btn-primary" onclick="send()">応募する</a>
+                </div>
+            </div>
+        <% }) %>
+
+    </main>
+    <!-- 広告-->
+    <aside>
+        <div class="m-2 p-2 bg-secondary shadow-sm rounded">
+            <a href="#">
+                <img src="https://www.kenzo724.com/wordpress/wp-content/uploads/2016/02/kobedenshilast-1.jpg" alt="広告"
+                    class="p-1" style="width: 100%;">
+            </a>
+            <a href="#">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShQ9tzAlmzoGJKCeV7qNfrOKGyJg_iApQ4cw&usqp=CAU"
+                    alt="広告" class="p-1" style="width: 100%;">
+            </a>
+            <a href="#">
+                <img src="https://www.youtube.com/img/desktop/yt_1200.png" alt="広告" class="p-1" style="width: 100%;">
+            </a>
+            <a href="#">
+                <img src="https://res.fashionsnap.com/image/upload/c_limit,f_auto,q_auto,w_2000/asset/article/images/2019/03/instagram_20190320_001.jpg"
+                    alt="広告" class="p-1" style="width: 100%;">
+            </a>
+            <a href="#">
+                <img src="https://tpc.googlesyndication.com/simgad/13830142044748159329?sqp=4sqPyQQrQikqJwhfEAEdAAC0QiABKAEwCTgDQPCTCUgAUAFYAWBfcAJ4AcUBLbKdPg&rs=AOga4qk9pkuPxF-yHfpvMnTS6dkoWyK7LQ"
+                    alt="広告" class="p-1" style="width: 100%;">
+            </a>
+            <a href="#">
+                <img src="data:image/png;base64,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"
+                    alt="広告" class="p-1" style="width: 100%;">
+            </a>
+        </div>
+    </aside>
+
+    <%- include('./_footer') %>
+
+    <script>
+        function send() {
+           alert("応募しました");
+        }
+    </script>

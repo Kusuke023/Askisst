@@ -1,0 +1,148 @@
+<!--ヘッダー-->
+<%- include('./_header') %>
+    <!--フォームの入力チェック-->
+    <script>
+        function check() {
+            var n1 = myform.firstname.value; /* 姓 */
+
+            var n2 = myform.lastname.value; /* 名 */
+
+            var g = myform.kana.value; /* フリガナ */
+
+            var p = new RegExp("^[0-9a-zA-Z_\.-]+@[0-9a-zA-Z_\.-]+\.[a-zA-Z]+$", "i"); /* メールアドレス */
+            var s = myform.address.value;
+            var o = s.match(p);
+
+            var a = new RegExp("^[0-9]{3}-[0-9]{4}-[0-9]{4}$", "i"); /* 電話番号 */
+            var b = myform.tell.value;
+            var c = b.match(a);
+
+            var d = new RegExp("^[0-9]{3}-[0-9]{4}$", "i"); /* 郵便番号 */
+            var e = myform.zip11.value;
+            var f = e.match(d);
+
+            var js = myform.addr11.value; /* 住所 */
+
+            var h = new RegExp("^[0-9a-zA-Z_\.-]+[0-9a-zA-Z_\.-]+\.[a-zA-Z]+$", "i"); /* パスワード */
+            var i = myform.pass.value;
+            var j = i.match(h);
+
+            if (n1 == "") {
+                window.alert("姓を入力してください。");
+                res = false;
+            } else if (n2 == "") {
+                window.alert("名を入力してください。");
+                res = false;
+            } else if (g == "") {
+                window.alert("フリガナを入力してください。");
+                res = false;
+            } else if (s == "") {
+                window.alert("メールアドレスを入力してください。");
+                res = false;
+            } else if (o == null) {
+                window.alert("メールアドレスの入力が誤っています。");
+                res = false;
+            } else if (b == "") {
+                window.alert("電話番号を入力してください。");
+                res = false;
+            } else if (c == null) {
+                window.alert("電話番号の入力が誤っています。");
+                res = false;
+            } else if (e == "") {
+                window.alert("郵便番号を入力してください。");
+                res = false;
+            } else if (f == null) {
+                window.alert("郵便番号の入力が誤っています。");
+                res = false;
+            } else if (js == "") {
+                window.alert("住所を入力してください。");
+                res = false;
+            } else if (i == "") {
+                window.alert("パスワードを入力してください。");
+                res = false;
+            } else if (j == null) {
+                window.alert("パスワードの入力が誤っています。");
+                res = false;
+            } else {
+                window.alert("送信します。");
+                res = true;
+            }
+            return res;
+        }
+    </script>
+
+    <main class="">
+        <div class="text-center" style="margin-right:16px;">
+            <br>
+            <h1>新規登録</h1>
+            <p>ユーザー情報を登録してください</p>
+            <!--登録フォーム-->
+            <form name="myform" action="signup.html" onsubmit="return check()">
+                <div class="form-group row justify-content-center m-2">
+                    <div class="col-5">
+                        <label style="position:relative;right:100px">姓</label>
+                        <input type="text" class="form-control" name="firstname" maxlength="32"
+                            style="position:relative;right:10px" placeholder="姓を入力して下さい。">
+                    </div>
+                    <div class="col-5">
+                        <label style="position:relative;right:80px">名</label>
+                        <input type="text" class="form-control" name="lastname" maxlength="32"
+                            style="position:relative;left:10px" placeholder="名を入力して下さい。">
+                    </div>
+                </div>
+                <div class="form-row justify-content-center m-2">
+                    <div class="col-10">
+                        <label class="float-left">フリガナ</label>
+                        <input type="text" class="form-control" name="kana" placeholder="フリガナを入力して下さい。">
+                    </div>
+                </div>
+                <div class="form-row justify-content-center m-2">
+                    <div class="col-10">
+                        <label class="float-left">メールアドレス</label>
+                        <input type="mail" class="form-control" name="address" placeholder="example@.com">
+                    </div>
+                </div>
+                <div class="form-row justify-content-center m-2">
+                    <div class="col-10">
+                        <label for="select1a" class="float-left">性別</label>
+                        <select id="select1a" class="form-control">
+                            <option>男性</option>
+                            <option>女性</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row justify-content-center m-2">
+                    <div class="col-10">
+                        <label class="float-left">郵便番号</label>
+                        <input type="text" class="form-control" name="zip11" placeholder="郵便番号を入力して下さい。"
+                            onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');">
+                    </div>
+                </div>
+                <div class="form-row justify-content-center m-2">
+                    <div class="col-10">
+                        <label class="float-left">住所</label>
+                        <input type="text" class="form-control" name="addr11" placeholder="住所を入力して下さい。">
+                    </div>
+                </div>
+                <div class="form-row justify-content-center m-2">
+                    <div class="col-10">
+                        <label class="float-left">電話番号</label>
+                        <input type="text" class="form-control" name="tell" placeholder="電話番号を入力して下さい。">
+                    </div>
+                </div>
+                <div class="form-row justify-content-center m-2">
+                    <div class="col-10">
+                        <label class="float-left">パスワード</label>
+                        <input type="password" class="form-control" name="pass" placeholder="パスワードを入力して下さい。">
+                    </div>
+                </div>
+
+                <div class="col text-center m-3">
+                    <button type="submit" class="btn btn-primary">登録</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!--フッター-->
+    <%- include('./_footer') %>

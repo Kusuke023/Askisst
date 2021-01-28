@@ -1,0 +1,122 @@
+<%- include('./_header') %>
+
+    <script>
+        function check() {
+            var p = new RegExp("^[0-9a-zA-Z_\.-]+@[0-9a-zA-Z_\.-]+\.[a-zA-Z]+$", "i"); /* メールアドレス */
+            var s = myform.address.value;
+            var o = s.match(p);
+
+            var n = myform.name.value;  /* 名前 */
+
+            var z = myform.contents.value;  /* 問い合わせ内容 */
+
+            if (n == "") {
+                window.alert("名前を入力してください。");
+                res = false;
+            }
+
+            else if (s == "") {
+                window.alert("メールアドレスを入力してください。");
+                res = false;
+            }
+            else if (o == null) {
+                window.alert("メールアドレスの入力が誤っています。");
+                res = false;
+            }
+
+            else if (z == "") {
+                window.alert("お問い合わせ内容を入力してください。");
+                res = false;
+            }
+
+            else {
+                window.alert("送信します。");
+                res = true;
+            }
+            return res;
+        }
+    </script>
+    <main class="">
+        <div class="text-center" style="margin-right: 16px;">
+            <br>
+            <h1>お問い合わせ</h1>
+            <p>下記フォーマットにご記入いただき、お問い合わせ内容を送信して下さい。</p>
+            <!--お問い合わせ内容入力-->
+            <form name="myform" action="q.html" onsubmit="return check()">
+                <div class="form-row justify-content-center m-2">
+                    <div class="col-5">
+                        <label class="float-left">氏名</label>
+                        <input type="text" class="form-control" name="name" placeholder="氏名を入力して下さい。">
+                    </div>
+                </div>
+
+                <div class="form-row justify-content-center m-2">
+                    <div class="col-5">
+                        <label class="float-left">メールアドレス</label>
+                        <input type="mail" class="form-control" name="address" placeholder="example@.com">
+                    </div>
+                </div>
+
+                <div class="form-row justify-content-center">
+                    <div class="col-5">
+                        <label class="float-left">お問い合わせ内容</label>
+                        <input type="text" class="form-control" name="contents" style="height: 300px;">
+                    </div>
+                </div>
+
+                <div class="col text-center m-3">
+                    <button type="submit" class="btn btn-primary">送信</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+
+    <!--フッター-->
+    <%- include('./_footer') %>
+
+        <style>
+            * {
+                margin: 0%;
+            }
+
+            body {
+                background-color: #d0e0e3ff;
+            }
+
+            hr {
+                background-color: white;
+            }
+
+            div#contents {
+                width: 100%;
+                background: #FFFFFF;
+                margin: 0px auto;
+            }
+
+            div.jpg {
+                width: 100%;
+                padding: 0px;
+                margin: 0px auto 0px auto;
+                border-bottom: solid 1px #d8d8d8;
+                background: url() repeat-x;
+                background-origin: content-box;
+            }
+
+            div.slide {
+                width: 100%;
+                padding: 0px;
+                margin: 0px auto 0px auto;
+            }
+
+            .slick-slide {
+                margin: 0px 5px;
+                height: 514px;
+            }
+
+            p.tes {
+                width: 1024px;
+                margin: 0px auto;
+            }
+        </style>
